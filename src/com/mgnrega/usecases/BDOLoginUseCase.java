@@ -11,9 +11,7 @@ public class BDOLoginUseCase {
         public static void main(String[] args) {
 			
         	Scanner sc= new Scanner(System.in);
-
-
-        	System.out.println("Enter email:");
+          	System.out.println("Enter email:");
         	String uname = sc.next();
         	
         	System.out.println("Enter Password:");
@@ -32,7 +30,4 @@ public class BDOLoginUseCase {
         	}
 		}	
 }
-
-
-
 

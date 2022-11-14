@@ -10,7 +10,7 @@ public class RegisterGpm {
 	
 	public static void RGpm() {
 		
-           Scanner sc= new Scanner(System.in);
+        Scanner sc= new Scanner(System.in);
        	System.out.println("Enter Grampachyat member id:");
 		int id= sc.nextInt();
 		
@@ -18,8 +18,7 @@ public class RegisterGpm {
 		String name= sc.next();
 		
 		
-		
-		System.out.println("Enter Grampachyat member Email:");
+        System.out.println("Enter Grampachyat member Email:");
 		String email= sc.next();
 		
 		System.out.println("Enter Grampachyat member password:");
@@ -36,9 +35,7 @@ public class RegisterGpm {
 		
 		BdoDao dao=new BdoDaoImple();
 		
-		
-		
-		Gpm mem= new Gpm();
+        Gpm mem= new Gpm();
 		
 		mem.setGid(id);
 		mem.setGname(name);
@@ -48,11 +45,8 @@ public class RegisterGpm {
 		mem.setGaddress(address);
 		mem.setBdoid(bid);
 		
-
-		String result= dao.registerGPM(id, name, email, password, phone, address, bid);
+       String result= dao.registerGPM(id, name, email, password, phone, address, bid);
 		
 		System.out.println(result);
 	}
 }
-
-

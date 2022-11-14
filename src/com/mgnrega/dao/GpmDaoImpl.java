@@ -94,17 +94,13 @@ public class GpmDaoImpl implements GpmDao{
 			  
 			  ResultSet rs=ps.executeQuery();
 			  while(rs.next()) {
-				  
-				  
 				    int id= rs.getInt("eid");
 					String n= rs.getString("ename");
 					String e= rs.getString("emobile");
 					String p= rs.getString("eaddress");
 					int m= rs.getInt("etotaldaywork");
 					String a = rs.getString("ewages");
-					
-				  
-				  Employee emp=new Employee(id, n, e, p, m, a);
+				 Employee emp=new Employee(id, n, e, p, m, a);
 				  
 				  emps.add(emp);
 			  }
@@ -126,8 +122,7 @@ public class GpmDaoImpl implements GpmDao{
 		
 		String message ="Not Resgistered";
 		
-		
-		try(Connection conn= DBUtil.provideConnection()) {
+        try(Connection conn= DBUtil.provideConnection()) {
 			
 		 	PreparedStatement ps= conn.prepareStatement("select * from employee where eid =?");
 			
@@ -183,7 +178,6 @@ public class GpmDaoImpl implements GpmDao{
 			
 			ps.setString(1, emobile);
 		
-			
 			ResultSet rs= ps.executeQuery();
 		
 				while(rs.next()) {

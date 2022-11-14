@@ -18,14 +18,12 @@ public class GetEmployeebyPhone {
 	public static void main(String[] args) {
 		
 		
-		
-		Scanner sc= new Scanner(System.in);
+        Scanner sc= new Scanner(System.in);
 		
 		System.out.println("Enter the Employee Mobile NUmber");
 		
 		String cname= sc.next();
 
-		
 		GpmDao dao = new GpmDaoImpl();
 		
 		try {
@@ -40,6 +38,3 @@ public class GetEmployeebyPhone {
 	}
 	}
 }
-
-
-

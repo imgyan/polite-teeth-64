@@ -12,7 +12,7 @@ import com.mgnrega.modal.Project;
 
 public interface BdoDao {
 	
-     public Bdo loginBDO(String username, String password)throws BDOException;
+    public Bdo loginBDO(String username, String password)throws BDOException;
 	
 	public String createProject(int pid, String pname, String pcost, String pissuedate);
 	
@@ -22,12 +22,9 @@ public interface BdoDao {
 
 	public List<Gpm> getAllGPM()throws GpmException;
 	
-	
 	public String AssignProjectToGPM(int pid, int gid)throws GpmException,ProjectException ;
 	
 	public List<EmpDTO> getAllEmployeeByPname(String pname)throws ProjectException;
-
-	
 
 
 }

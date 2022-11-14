@@ -23,8 +23,7 @@ public class CreateProject {
 		
 		System.out.println("Enter Project issuedate:");
 		String issuedate= sc.next();
-		
-		
+	
 		BdoDao dao=new BdoDaoImple();
 
         Project project= new Project();

@@ -56,8 +56,6 @@ public class BdoDaoImple implements BdoDao{
 	}
 
 
-
-
 	@Override
 	public String createProject(int pid, String pname, String pcost, String pissuedate) {
 	        String message = "Not Inserted..";
@@ -65,8 +63,6 @@ public class BdoDaoImple implements BdoDao{
 	    try(Connection conn= DBUtil.provideConnection()) {
 			
 			PreparedStatement ps= conn.prepareStatement ("insert into project(pid,pname,pcost,pissuedate) values(?,?,?,?)");
-			
-			
 			
 			ps.setInt(1, pid);
 			ps.setString(2, pname);
@@ -79,16 +75,12 @@ public class BdoDaoImple implements BdoDao{
 			if(x > 0)
 				message = "Project Registered Sucessfully !";
 			
-			
-			
 		} catch (SQLException e) {
 			message = e.getMessage();
 		}
 	
 		return message;
 	}
-
-
 
 
 	@Override
@@ -136,8 +128,6 @@ public class BdoDaoImple implements BdoDao{
 			PreparedStatement ps= conn.prepareStatement
 					("insert into Gpm(gid,gname,gemail,gpassword,gmobile,gaddress) values(?,?,?,?,?,?)");
 			
-			
-			
 			ps.setInt(1, gid);
 			ps.setString(2, gname);
 			ps.setString(3, gemail);
@@ -171,9 +161,7 @@ public class BdoDaoImple implements BdoDao{
 			  
 			  ResultSet rs=ps.executeQuery();
 			  while(rs.next()) {
-				  
-				  
-				    int id= rs.getInt("gid");
+				   int id= rs.getInt("gid");
 					String n= rs.getString("gname");
 					String e= rs.getString("gemail");
 					String p= rs.getString("gpassword");
@@ -197,10 +185,6 @@ public class BdoDaoImple implements BdoDao{
 	    return gpms;  
 		
 	}
-
-
-
-// TODO
 	
 	@Override
 	public String AssignProjectToGPM(int pid, int gid) throws GpmException, ProjectException {
@@ -251,10 +235,7 @@ public class BdoDaoImple implements BdoDao{
 		return massage;
 	}
 
-
-
-
-	@Override
+@Override
 	public List<EmpDTO> getAllEmployeeByPname(String pname) throws ProjectException {
 	
 		List<EmpDTO> edtos = new ArrayList<>();
@@ -264,7 +245,6 @@ public class BdoDaoImple implements BdoDao{
 			PreparedStatement ps= conn.prepareStatement("select e.ename, e.emobile,e.eaddress, e.etotaldaywork, e.ewages, p.pname "
 														+ "from  employee e INNER JOIN project p INNER JOIN project_employee pe "
 														+ "ON e.eid = pe.eid AND p.pid = pe.pid AND p.pname= ?");
-			
 			ps.setString(1, pname);
 			
 			ResultSet rs= ps.executeQuery();
@@ -278,13 +258,10 @@ public class BdoDaoImple implements BdoDao{
 				int d= rs.getInt("etotaldaywork");
 				int w = rs.getInt("ewages");
 				String p = rs.getString("pname");
-//				int c = rs.getInt("pid");
 				
 				EmpDTO dto = new EmpDTO(n, m, a, d, w, p);
 				
 				edtos.add(dto);
-				
-				
 				
 			}		
 			
@@ -300,11 +277,5 @@ public class BdoDaoImple implements BdoDao{
 	}
 }
 
-
-
-
-
-	
-      
 
 

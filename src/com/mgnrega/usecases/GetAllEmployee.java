@@ -9,7 +9,6 @@ import com.mgnrega.modal.Employee;
 
 public class GetAllEmployee {
 	
-	
 	public static void GEMP() {
 	GpmDao dao = new GpmDaoImpl();
 		
@@ -17,8 +16,7 @@ public class GetAllEmployee {
 		List<Employee> emp= dao.getAllEmp();
 		
 		emp.forEach(s ->{
-			
-			
+		
 			System.out.println("Employee id :"+s.getEid());
 			System.out.println("Employee Name :"+s.getEname());
 			System.out.println("Employee mobile: "+s.getEmobile());
@@ -37,5 +35,3 @@ public class GetAllEmployee {
 	}
 
 }
-
-

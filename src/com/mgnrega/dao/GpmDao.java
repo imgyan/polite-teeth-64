@@ -21,7 +21,5 @@ public interface GpmDao {
 	public String registerEmployeeToProject(int pid, int eid)throws ProjectException, EmployeeException ;
 
 	public List<Employee>  getEmployeeByMobile(String emobile)throws ProjectException, EmployeeException;
-     
-	
-
+   
 }

@@ -13,10 +13,9 @@ public class RegisterEmployee {
 	
 	public static void REmployee() {
 	
-	     Scanner sc= new Scanner(System.in);
+	        Scanner sc= new Scanner(System.in);
 	     
-	     
-	       	System.out.println("Enter Employee id:");
+	      	System.out.println("Enter Employee id:");
 			int id= sc.nextInt();
 			
 			System.out.println("Enter Employee  Name:");
@@ -37,8 +36,6 @@ public class RegisterEmployee {
 			
 			GpmDao dao=new GpmDaoImpl();
 			
-			
-			
 			Employee mem= new Employee();
 			
 			mem.setEid(id);
@@ -48,9 +45,7 @@ public class RegisterEmployee {
 			mem.setDayworked(daywork);
 			mem.setEwages(wages);
 		
-		
-
-			String result= dao.registerEmployee(id, name, phone, address, daywork, wages);
+		  String result= dao.registerEmployee(id, name, phone, address, daywork, wages);
 			
 			System.out.println(result);
 	}
