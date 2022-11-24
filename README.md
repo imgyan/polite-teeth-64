@@ -2,6 +2,7 @@
 <h1 align="center">MGNREGA Project</h1>
 <p align="center" font-size="35px"> MGNREGA stands for <strong>The Mahatma Gandhi National Rural Employment Guarantee Act</strong> whose aim is to provide at least 100 days of guaranteed wage employment in a year to every rural household. I have tried to make some backend functionalities of MGNREGA using Java. </p>
   <br>
+  
 ### There are two users of this system : 
  - BDO (Block Development Officer) 
  - Gram Panchayat member
